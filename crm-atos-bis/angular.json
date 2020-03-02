@@ -30,14 +30,14 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions":{
+              "includePaths":[
+                "src/stylings/"
+              ]
+            },
             "scripts": []
           },
-          "stylePreprocessorOptions":{
-            "includePaths":[
-              "src/stylings/"
-            ]
-          }
-          ,"configurations": {
+          "configurations": {
             "production": {
               "fileReplacements": [
                 {

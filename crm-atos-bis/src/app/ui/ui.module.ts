@@ -9,6 +9,7 @@ import { UiComponent } from './components/ui/ui.component';
 
 @NgModule({
   declarations: [UiComponent, HeaderComponent, NavComponent, FooterComponent],
+  exports: [UiComponent],
   imports: [
     CommonModule
   ]
