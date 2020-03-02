@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crm-atos": {
+    "crm-atos-bis": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crm-atos",
+            "outputPath": "dist/crm-atos-bis",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "crm-atos:build"
+            "browserTarget": "crm-atos-bis:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "crm-atos:build:production"
+              "browserTarget": "crm-atos-bis:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crm-atos:build"
+            "browserTarget": "crm-atos-bis:build"
           }
         },
         "test": {
@@ -114,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "crm-atos:serve"
+            "devServerTarget": "crm-atos-bis:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "crm-atos:serve:production"
+              "devServerTarget": "crm-atos-bis:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "crm-atos"
+    }
+  },
+  "defaultProject": "crm-atos-bis",
+  "cli": {
+    "analytics": false
+  }
 }
