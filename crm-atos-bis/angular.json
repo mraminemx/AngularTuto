@@ -32,7 +32,12 @@
             ],
             "scripts": []
           },
-          "configurations": {
+          "stylePreprocessorOptions":{
+            "includePaths":[
+              "src/stylings/"
+            ]
+          }
+          ,"configurations": {
             "production": {
               "fileReplacements": [
                 {
