@@ -14,7 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     UiModule,
-    NgbModule.forRoot()
+   ///dprecated from version 3 NgbModule.forRoot()
+   NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
