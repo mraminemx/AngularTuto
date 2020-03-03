@@ -1,30 +1,34 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import {PageLoginComponent} from './login/pages/page-login/page-login.component';
-import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/page-not-found.component';
-import { PageClientsComponent } from './clients-module/pages/page-clients/page-clients.component';
-import { PagePrestationsComponent } from './prestations-module/pages/page-prestations/page-prestations.component';
+
 
 //router is a singleton can be initialized only on time
-
 const routes: Routes = [
- { path: 'clients', component: PageClientsComponent },
- { path: 'prestations',      component: PagePrestationsComponent },
-  {
-    path: 'login',
-    component: PageLoginComponent,
-    data: { title: 'Heroes List' }
-   },
-  { path: '',
-    redirectTo: '/login',// url/path if  redirectTo: '/login' -> url/login. if redirectTo: 'login' -> url/path/login
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
+ {
+ path: 'clients',
+ loadChildren:()=>import('./clients-module/clients-module.module').then(m=>m.ClientsModuleModule)
+},
+{
+  path: 'prestations',
+  loadChildren:()=>import('./prestations-module/prestations-module.module').then(m=> m.PrestationsModuleModule)
+ },
+ { path: 'login', component: PageLoginComponent, data: { title: 'Login Page' }},
+ { path: '', redirectTo: '/login',// url/path if  redirectTo: '/login' -> url/login. if redirectTo: 'login' -> url/path/login
+    pathMatch: 'full'},
+ { path: '**', loadChildren:()=>import('./page-not-found/page-not-found.module').then(m=> m.PageNotFoundModule)}
 ];
 
 @NgModule({
   //enableTracing : to start troubleshooting router-related issues is to enable tracing, which will print out every single event in the console.
-  imports: [RouterModule.forRoot(routes, {enableTracing:true})],
+  imports: [RouterModule.forRoot(routes, {enableTracing:false})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+// Diagnostic only: inspect router configuration
+constructor(router: Router) {
+  // Use a custom replacer to display function names in the route configs
+  const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+  console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+}
+}
