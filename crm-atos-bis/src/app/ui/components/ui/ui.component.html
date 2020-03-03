@@ -1,20 +1,26 @@
 <header class="fixed-top">
   <!-- <fa-icon [icon]="faBars" (click)="toggle()"></fa-icon> -->
-  <app-header></app-header>
+  <!-- directive ng content pour positioner :
+    ajouter attribut select et le binder avec un selecteur css.
+  attribut avec la class css exemple select="<baliseHtml>.<classCss>
+    ou avec id select="#<idComposant>"
+    ou {pour tout les elements avec la meme class CSS [class="<ClassCss>"]} angular 8"-->
+  <ng-content select=".test"></ng-content>
 </header>
 <main>
   <div class="shadow position-fixed">
   </div>
   <aside>
     <div class="scroller">
-      <app-nav></app-nav>
+      <ng-content select="p"></ng-content>
     </div>
   </aside>
   <div class="page">
     <div class="contents">
+      <ng-content></ng-content>
     </div>
     <footer>
-<app-footer></app-footer>
+      <ng-content></ng-content>
     </footer>
   </div>
 </main>
