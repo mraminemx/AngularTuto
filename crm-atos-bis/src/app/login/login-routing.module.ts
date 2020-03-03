@@ -5,7 +5,7 @@ import { PageLoginComponent } from './pages/page-login/page-login.component';
 //Alt + Maj + O ordonnancer
 //router is a singleton can be initialized only on time
 const routes: Routes = [
-{ path: '', component: PageLoginComponent}
+{ path: 'login', component: PageLoginComponent}
 ];
 
 @NgModule({

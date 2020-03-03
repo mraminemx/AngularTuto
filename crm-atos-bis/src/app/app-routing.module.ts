@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageLoginComponent } from './login/pages/page-login/page-login.component';
 
 //Alt + Maj + O ordonnancer
@@ -13,10 +13,6 @@ const routes: Routes = [
   path: 'prestations',
   loadChildren:()=>import('./prestations-module/prestations-module.module').then(m=> m.PrestationsModuleModule)
  },
- {
-  path: 'login',
-  loadChildren:()=>import('./login/login.module').then(m=> m.LoginModule)
- },
  { path: '', redirectTo: '/login',// url/path if  redirectTo: '/login' -> url/login. if redirectTo: 'login' -> url/path/login
     pathMatch: 'full'},
  { path: '**', loadChildren:()=>import('./page-not-found/page-not-found.module').then(m=> m.PageNotFoundModule)}
@@ -24,7 +20,7 @@ const routes: Routes = [
 
 @NgModule({
   //enableTracing : to start troubleshooting router-related issues is to enable tracing, which will print out every single event in the console.
-  imports: [RouterModule.forRoot(routes, {enableTracing:false})],
+  imports: [RouterModule.forRoot(routes, {enableTracing:false, preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -13,11 +13,11 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     AppRoutingModule,
     UiModule,
    ///dprecated from version 3 NgbModule.forRoot()
-   NgbModule,
-   LoginModule
+   NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
