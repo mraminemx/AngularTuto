@@ -19,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  //enableTracing
+  //enableTracing : to start troubleshooting router-related issues is to enable tracing, which will print out every single event in the console.
   imports: [RouterModule.forRoot(routes, {enableTracing:true})],
   exports: [RouterModule]
 })
