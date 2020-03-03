@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router } from '@angular/router';
-import {PageLoginComponent} from './login/pages/page-login/page-login.component';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { PageLoginComponent } from './login/pages/page-login/page-login.component';
 
-
+//Alt + Maj + O ordonnancer
 //router is a singleton can be initialized only on time
 const routes: Routes = [
  {
