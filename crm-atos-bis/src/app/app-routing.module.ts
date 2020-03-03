@@ -13,7 +13,10 @@ const routes: Routes = [
   path: 'prestations',
   loadChildren:()=>import('./prestations-module/prestations-module.module').then(m=> m.PrestationsModuleModule)
  },
- { path: 'login', component: PageLoginComponent, data: { title: 'Login Page' }},
+ {
+  path: 'login',
+  loadChildren:()=>import('./login/login.module').then(m=> m.LoginModule)
+ },
  { path: '', redirectTo: '/login',// url/path if  redirectTo: '/login' -> url/login. if redirectTo: 'login' -> url/path/login
     pathMatch: 'full'},
  { path: '**', loadChildren:()=>import('./page-not-found/page-not-found.module').then(m=> m.PageNotFoundModule)}

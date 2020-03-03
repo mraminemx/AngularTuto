@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
-import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
+import { PageClientsComponent } from './pages/page-clients/page-clients.component';
 
 //Alt + Maj + O ordonnancer
 //router is a singleton can be initialized only on time
 const routes: Routes = [
-{ path: '', component: PagePrestationsComponent}
+{ path: '', component: PageClientsComponent}
 ];
 
 @NgModule({
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PrestationsRoutingModule { }
+export class ClientsRoutingModule { }
