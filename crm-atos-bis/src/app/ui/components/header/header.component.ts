@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public title = 'Nabil\'s App';
   constructor() { }
 
   ngOnInit(): void {

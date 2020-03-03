@@ -1,0 +1,11 @@
+@import 'theme';
+@import 'fonts';
+//host element to get select selector 'app-header'
+:host{
+  width: 100%;
+}
+p{
+  text-align: center;
+  font-size: $h2-fz;
+  color : $color3;
+}
