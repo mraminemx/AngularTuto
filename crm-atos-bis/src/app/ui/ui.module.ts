@@ -5,6 +5,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { UiComponent } from './components/ui/ui.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [UiComponent,NavComponent,HeaderComponent,FooterComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule// to be able to use routerLink
   ]
 })
 export class UiModule { }
