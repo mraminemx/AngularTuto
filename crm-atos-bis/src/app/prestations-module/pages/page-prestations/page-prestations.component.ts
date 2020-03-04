@@ -12,7 +12,7 @@ export class PagePrestationsComponent implements OnInit {
 
   // public collection: Prestation[];
   public collection$: Observable<Prestation>;
-  public entet =['Type','Client','Nb Jours','Total HT','Total TTC','State'];  
+  public entete =['Type','Client','Nb Jours','Total HT','Total TTC','State'];
   constructor(private ps: PrestationsService) { }
 
   ngOnInit(): void {

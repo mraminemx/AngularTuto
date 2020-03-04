@@ -28,3 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 https://cli.angular.io/
+
+npm config set proxy=http://193.56.47.8:8080/
+npm config set https-proxy=http://193.56.47.8:8080
+
+
+npm install pour mettre a jour le projet 

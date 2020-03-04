@@ -4,19 +4,19 @@
     <thead>
       <tr>
         <th scope="col" *ngFor="let titre of entete">{{titre}}</th>
-
       </tr>
     </thead>
     <tbody>
       <!-- tapper a ouvre une fenetre puis mettre ng pour trouver les directive-->
       <!-- using async-->
-      <tr *ngFor="let item of collection$ | async">
+      <tr *ngFor="let item of collection$ | async as collection">
+        <!-- <td scope="row">{{collection | json}}</td> as json -->
         <td scope="row">{{item.typePresta}}</td>
         <td scope="row">{{item.client}}</td>
         <td scope="row">{{item.nbJours}}</td>
-        <td scope="row">{{item.tjmHt}}</td>
-        <td scope="row">{{item.totalHt()}}</td>
-        <td scope="row">{{item.totalTtc()}}</td>
+        <td scope="row">{{item.tjmHt | currency:'EUR'}}</td>
+        <td scope="row">{{item.totalHt() | total:'HT' | currency:'EUR'}}</td>y
+        <td scope="row">{{item.totalTtc() | total:'TTC' |currency:'EUR'}}</td>
         <td scope="row">{{item.state}}</td>
       </tr>
     </tbody>
