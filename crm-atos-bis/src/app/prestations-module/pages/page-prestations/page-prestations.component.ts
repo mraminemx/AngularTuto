@@ -17,6 +17,7 @@ export class PagePrestationsComponent implements OnInit {
 
   ngOnInit(): void {
     //Subscribe to an observable
+    // console.log(ps.collection);
     this.ps.collection.subscribe(
       (datas) => {this.collection = datas;}
     );

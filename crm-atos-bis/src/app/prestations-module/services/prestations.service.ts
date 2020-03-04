@@ -16,7 +16,7 @@ export class PrestationsService {
   constructor(private http: HttpClient) {
     //httpCall this.http.get(this.configUrl);
     // du string avec Ctrl + alt + 7(haut)
-    //Script avec $[]
+    //Script avec ${}
     this.collection =this.http.get<Prestation[]>(`${environment.urlApi}/prestations`);
   }
 
