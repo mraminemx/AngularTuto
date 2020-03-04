@@ -14,13 +14,13 @@
     <tbody>
       <!-- tapper a ouvre une fenetre puis mettre ng pour trouver les directive-->
       <tr *ngFor="let item of collection">
-        <th scope="row">{{item.typePresta}}</th>
-        <th scope="row">{{item.client}}</th>
-        <th scope="row">{{item.nbJours}}</th>
-        <th scope="row">{{item.tjmHt}}</th>
-        <th scope="row">{{item.totalHt()}}</th>
-        <th scope="row">{{item.totalTtc()}}</th>
-        <th scope="row">{{item.state}}</th>
+        <td scope="row">{{item.typePresta}}</td>
+        <td scope="row">{{item.client}}</td>
+        <td scope="row">{{item.nbJours}}</td>
+        <td scope="row">{{item.tjmHt}}</td>
+        <td scope="row">{{item.totalHt()}}</td>
+        <td scope="row">{{item.totalTtc()}}</td>
+        <td scope="row">{{item.state}}</td>
       </tr>
     </tbody>
   </table>
