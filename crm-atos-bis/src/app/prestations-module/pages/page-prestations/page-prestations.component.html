@@ -17,7 +17,7 @@
         <td scope="row">{{item.tjmHt | currency:'EUR'}}</td>
         <td scope="row">{{item | total:'HT' | currency:'EUR'}}</td>
         <td scope="row">{{item | total |currency:'EUR'}}</td>
-        <td scope="row" class="state-confirme">
+        <td scope="row" [ngClass]="{'state-annule': 'Annulé'===item.state,'state-confirme': 'Confirmé'===item.state,'state-option': 'Annulé'===item.state}" class="state-confirme">
           <!-- crocher '[value]' pour binding avec value with pipe-->
           <!-- <select *ngFor="let state of states | keyvalue" [value]="state.key">{{state.value}}"</select> -->
           <!-- event to pass $event-->
