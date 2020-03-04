@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { Observable } from 'rxjs';
 import {environment} from 'src/environments/environment';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,15 @@ export class PrestationsService {
     //httpCall this.http.get(this.configUrl);
     // du string avec Ctrl + alt + 7(haut)
     //Script avec ${}
-    this.collection =this.http.get<Prestation[]>(`${environment.urlApi}/prestations`);
+    this.collection =this.http.get<Prestation[]>(`${environment.urlApi}/prestations`).pipe(
+      //tab objet json
+      // map(tab => tab.map(objJsn => new Prestation(objJsn)))
+      map((tab) => {
+        return tab.map((objJsn) => {
+          return new Prestation(objJsn);
+        })
+      })
+    );
   }
 
   // get collection

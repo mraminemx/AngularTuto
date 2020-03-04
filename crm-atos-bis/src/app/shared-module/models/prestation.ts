@@ -11,6 +11,13 @@ tva = 20;
 state = States.OPTION;
 comment: string;
 
+//Objet Optional avec '?'
+//Object that respond partially to the attributes of the object
+constructor (obj?: Partial<Prestation>){
+  if(obj){
+    Object.assign(this, obj);
+  }
+}
 totalHt():number {
   return this.tjmHt * this.nbJours;
 }

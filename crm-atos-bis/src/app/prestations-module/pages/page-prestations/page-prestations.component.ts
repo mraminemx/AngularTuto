@@ -19,7 +19,9 @@ export class PagePrestationsComponent implements OnInit {
     //Subscribe to an observable
     // console.log(ps.collection);
     this.ps.collection.subscribe(
-      (datas) => {this.collection = datas;}
+      (datas) => {
+        console.log(datas);
+        this.collection = datas;}
     );
   }
 
