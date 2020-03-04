@@ -11,7 +11,8 @@ import { map } from 'rxjs/operators'
 export class PrestationsService {
 
   //Observable to be able to subscribe to it
-  private pCollection:Observable<Prestation[]>;
+  //Observable always with $
+  private pCollection$:Observable<Prestation[]>;
   private environement:string;
 
   constructor(private http: HttpClient) {
@@ -31,23 +32,23 @@ export class PrestationsService {
 
   // get collection
   public get collection():Observable<Prestation[]> {
-    return this.pCollection;
+    return this.pCollection$;
   }
   //set collection
   public set collection(col:Observable<Prestation[]>) {
-    this.pCollection = col;
+    this.pCollection$ = col;
   }
   // add item in collection
   public addItem(item:Prestation){
-    this.pCollection;
+    this.pCollection$;
   }
   // delete item in collection
   public deleteItem(item:Prestation){
-    this.pCollection;
+    this.pCollection$;
   }
   // update item in collection
   public updateItem(item:Prestation) {
-    this.pCollection;
+    this.pCollection$;
   }
   // get item by id
   public getItem(){

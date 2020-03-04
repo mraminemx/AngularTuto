@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Observable } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
+import { States } from 'src/app/shared-module/enums/states.enum';
 
 @Component({
   selector: 'app-page-prestations',
@@ -11,15 +12,19 @@ import { Prestation } from 'src/app/shared-module/models/prestation';
 export class PagePrestationsComponent implements OnInit {
 
   // public collection: Prestation[];
-  public collection$: Observable<Prestation>;
-  public entete =['Type','Client','Nb Jours','Total HT','Total TTC','State'];
+  public collection$: Observable<Prestation[]>;
+  public entete =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
+  //to get keyvalue
+  public states = Object.values(States);
+  //to use pipe keyvalue
+  //public states = States;
   constructor(private ps: PrestationsService) { }
 
   ngOnInit(): void {
     //to be able to subscribe and unsubscribe automaticaly using Async
-    this.collection$= this.collection$;
+    this.collection$= this.ps.collection;
     //Subscribe to an observable
-    // console.log(ps.collection);
+    console.log(this.ps.collection);
     // this.ps.collection.subscribe(
     //   (datas) => {
     //     console.log(datas);
@@ -27,4 +32,7 @@ export class PagePrestationsComponent implements OnInit {
     // );
   }
 
+  public changeState(item:Prestation, event){
+    console.log(event);
+  }
 }

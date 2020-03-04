@@ -15,9 +15,16 @@
         <td scope="row">{{item.client}}</td>
         <td scope="row">{{item.nbJours}}</td>
         <td scope="row">{{item.tjmHt | currency:'EUR'}}</td>
-        <td scope="row">{{item.totalHt() | total:'HT' | currency:'EUR'}}</td>y
-        <td scope="row">{{item.totalTtc() | total:'TTC' |currency:'EUR'}}</td>
-        <td scope="row">{{item.state}}</td>
+        <td scope="row">{{item | total:'HT' | currency:'EUR'}}</td>
+        <td scope="row">{{item | total |currency:'EUR'}}</td>
+        <td scope="row">
+          <!-- crocher '[value]' pour binding avec value with pipe-->
+          <!-- <select *ngFor="let state of states | keyvalue" [value]="state.key">{{state.value}}"</select> -->
+          <!-- event to pass $event-->
+          <select (change)="changeState(item,$event)">
+            <option *ngFor="let state of states" [value]="state" [selected]="state==item.state">{{state}}"</option>
+          </select>
+        </td>
       </tr>
     </tbody>
   </table>

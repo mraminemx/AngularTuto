@@ -10,7 +10,7 @@ export class TotalPipe implements PipeTransform {
       //To avoid bug when there is no value
       console.log(value);
       console.log(args);
-      if(args[0]='HT')
+      if(args)
         return value.totalHt();
       else
         return value.totalTtc();
