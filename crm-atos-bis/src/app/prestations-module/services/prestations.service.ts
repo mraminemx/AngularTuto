@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { Observable } from 'rxjs';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,13 @@ export class PrestationsService {
 
   //Observable to be able to subscribe to it
   private pCollection:Observable<Prestation[]>;
+  private environement:string;
+
   constructor(private http: HttpClient) {
     //httpCall this.http.get(this.configUrl);
-    this.collection =http.;
+    // du string avec Ctrl + alt + 7(haut)
+    //Script avec $[]
+    this.collection =this.http.get<Prestation[]>(`${environment.urlApi}/prestations`);
   }
 
   // get collection
