@@ -22,7 +22,7 @@
           <!-- <select *ngFor="let state of states | keyvalue" [value]="state.key">{{state.value}}"</select> -->
           <!-- event to pass $event-->
           <select (change)="changeState(item,$event)">
-            <option *ngFor="let state of states" [value]="state" [selected]="state==item.state">{{state}}"</option>
+            <option *ngFor="let state of states" [value]="state" [selected]="state==item.state">{{state}}</option>
           </select>
         </td>
       </tr>

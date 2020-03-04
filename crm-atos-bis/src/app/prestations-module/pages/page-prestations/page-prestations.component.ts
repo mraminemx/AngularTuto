@@ -33,6 +33,6 @@ export class PagePrestationsComponent implements OnInit {
   }
 
   public changeState(item:Prestation, event){
-    console.log(event);
+    console.log(event.target.value);
   }
 }
