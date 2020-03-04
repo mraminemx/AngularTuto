@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appState]'
 })
-export class StateDirective {
+export class StateDirective implements OnInit{
+  ngOnInit(): void {
+    console.log(this.appState);
+  }
 
-  constructor() { }
+  @Input() appState:any;
+  constructor() {
+  }
 
 }
