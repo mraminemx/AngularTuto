@@ -52,6 +52,7 @@ export class PrestationsService {
     //Update in Database before updating Front
     let obj=new Prestation(item);
     obj.state=state;
+    console.log(item.state);
     return this.updateItem(obj);
   }
 

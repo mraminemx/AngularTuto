@@ -27,6 +27,7 @@ totalTtc():number {
   if(this.tva<=0){
     return this.totalHt();
   }
-  return this.totalHt() *(1+this.tva/100);
+  console.log(this.totalHt()*(1+this.tva/100));
+  return this.totalHt()*(1+this.tva/100);
 }
 }
