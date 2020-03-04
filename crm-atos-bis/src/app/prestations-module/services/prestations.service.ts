@@ -18,7 +18,7 @@ export class PrestationsService {
     //httpCall this.http.get(this.configUrl);
     // du string avec Ctrl + alt + 7(haut)
     //Script avec ${}
-    this.collection =this.http.get<Prestation[]>(`${environment.urlApi}/prestations`).pipe(
+    this.collection =this.http.get<Prestation[]>(`${environment.urlApi}prestations`).pipe(
       //tab objet json
       // map(tab => tab.map(objJsn => new Prestation(objJsn)))
       map((tab) => {
