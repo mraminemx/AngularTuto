@@ -34,5 +34,8 @@ export class PagePrestationsComponent implements OnInit {
 
   public changeState(item:Prestation, event){
     console.log(event.target.value);
+    this.ps.updateState(item,event.target.value).subscribe((res:Prestation)=>{
+      item.state= res.state;
+    });
   }
 }
