@@ -9,6 +9,7 @@ export class StateDirective implements OnInit{
   @HostBinding('class') classTd:string;
   ngOnInit(): void {
     console.log(this.appState);
+    this.classTd ='state-confirme';
   }
 
   constructor() {
