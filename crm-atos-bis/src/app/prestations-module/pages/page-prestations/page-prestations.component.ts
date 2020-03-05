@@ -18,6 +18,7 @@ export class PagePrestationsComponent implements OnInit {
   public title:string;
   public subtitle:string;
   public label:string;
+  public googlelink:string;
   public route:string;
   public externallink:string;
   //to get keyvalue
@@ -41,6 +42,7 @@ export class PagePrestationsComponent implements OnInit {
     this.title="Prestations";
     this.subtitle="Toutes les prestations"
     this.label ="Ajouter une prestation";
+    this.googlelink="GoOgLe";
     this.route="add";
     this.externallink="https://www.google.fr";
     // this.ps.collection.subscribe(
