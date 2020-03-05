@@ -14,6 +14,8 @@ export class PagePrestationsComponent implements OnInit {
   // public collection: Prestation[];
   public collection$: Observable<Prestation[]>;
   public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
+  public title:string;
+  public subtitle:string;
   //to get keyvalue
   public states = Object.values(States);
   //to use pipe keyvalue
@@ -25,6 +27,8 @@ export class PagePrestationsComponent implements OnInit {
     this.collection$= this.ps.collection;
     //Subscribe to an observable
     console.log(this.ps.collection);
+    this.title="Prestations";
+    this.subtitle="Toutes les prestations"
     // this.ps.collection.subscribe(
     //   (datas) => {
     //     console.log(datas);
