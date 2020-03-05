@@ -29,4 +29,10 @@ export class FormPrestationComponent implements OnInit {
     });
   }
 
+  public onSubmit() {
+    //@Output send data to arent component
+    console.log(this.form.value);
+    this.nItem.emit();
+  }
+
 }

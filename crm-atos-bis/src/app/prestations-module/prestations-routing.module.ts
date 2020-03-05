@@ -9,7 +9,8 @@ const routes: Routes = [
 { path: '', component: PagePrestationsComponent,
   data:{ title : 'Prestations', subtitles:'Toutes les prestations'}
 },
-{ path: 'add', component: PageAddPrestationComponent,
+{ path: 'add',
+  component: PageAddPrestationComponent,
   data:{ title : 'Prestations', subtitles:'Ajouter une prestation'}
 }
 ];
