@@ -6,7 +6,7 @@ a {
   display: inline-block;
   padding: 1em;
   font-size: $regular-fz;
-  background: lighten($color3, 10);
+  background: $color3;
   transition: all .5s;
   //when hovering over the button
   &:hover {
