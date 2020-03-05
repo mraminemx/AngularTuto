@@ -1,5 +1,5 @@
-<app-template-a [title]="title" [subtitle]="subtitle">
-  <app-tableau-light [headers]="headers">
+<app-template-b [title]="title" [subtitle]="subtitle">
+  <app-tableau-dark [headers]="headers">
         <!-- tapper a ouvre une fenetre puis mettre ng pour trouver les directive-->
         <!-- using async-->
         <tr *ngFor="let item of collection$ | async as collection">
@@ -20,5 +20,5 @@
             </select>
           </td>
         </tr>
-  </app-tableau-light>
-</app-template-a>
+      </app-tableau-dark>
+</app-template-b>
