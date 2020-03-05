@@ -1,12 +1,13 @@
 @import 'theme';
+#table-dark {
+  .state-option {
+  background  : $color3;
+  }
+  .state-annule {
+    background  : $color-error;
+  }
 
-#table-dark .state-option {
- background  : $color3;
+  .state-confirme {
+    background  : $color-success;
+  }
 }
-#table-dark .state-annule {
-  background  : $color-error;
- }
-
-#table-dark .state-confirme {
-  background  : $color-success;
- }
