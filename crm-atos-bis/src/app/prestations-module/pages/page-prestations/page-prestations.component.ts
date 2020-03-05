@@ -16,6 +16,9 @@ export class PagePrestationsComponent implements OnInit {
   public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
   public title:string;
   public subtitle:string;
+  public label:string;
+  public route:string;
+  public externallink:string;
   //to get keyvalue
   public states = Object.values(States);
   //to use pipe keyvalue
@@ -29,6 +32,9 @@ export class PagePrestationsComponent implements OnInit {
     console.log(this.ps.collection);
     this.title="Prestations";
     this.subtitle="Toutes les prestations"
+    this.label ="Ajouter une prestation";
+    this.route="add";
+    this.externallink="https://www.google.fr";
     // this.ps.collection.subscribe(
     //   (datas) => {
     //     console.log(datas);
