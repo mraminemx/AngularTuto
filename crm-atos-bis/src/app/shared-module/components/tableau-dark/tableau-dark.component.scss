@@ -1,0 +1,12 @@
+@import 'theme';
+
+.state-option {
+ background  : $color3;
+}
+.state-annule {
+  background  : $color-error;
+ }
+
+ .state-confirme {
+  background  : $color-success;
+ }
