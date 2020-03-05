@@ -13,7 +13,7 @@ export class PagePrestationsComponent implements OnInit {
 
   // public collection: Prestation[];
   public collection$: Observable<Prestation[]>;
-  public entete =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
+  public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
   //to get keyvalue
   public states = Object.values(States);
   //to use pipe keyvalue
