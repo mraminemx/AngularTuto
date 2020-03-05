@@ -1,41 +1,41 @@
 <div class="container">
-<form>
+<form [formGroup]="form">
 
   <div class="form-group">
     <label for="typepresta">Type</label>
-    <input type="text" class="form-control" id="typepresta" placeholder="typepresta">
+    <input formControlName="typepresta" type="text" class="form-control" id="typepresta" placeholder="typepresta">
   </div>
 
   <div class="form-group">
     <label for="client">Client</label>
-    <input type="text" class="form-control" id="client" placeholder="client">
+    <input formControlName="client" type="text" class="form-control" id="client" placeholder="client">
   </div>
 
   <div class="form-group">
     <label for="nbjr">Nombre de Jours</label>
-    <input type="number" class="form-control" id="nbjr" placeholder="nbjr">
+    <input formControlName="nbjr" type="number" class="form-control" id="nbjr" placeholder="nbjr">
   </div>
 
   <div class="form-group">
     <label for="tjmht">Tarif Journalier HT</label>
-    <input type="number" class="form-control" id="tjmht" placeholder="tjmht">
+    <input formControlName="tjmht" type="number" class="form-control" id="tjmht" placeholder="tjmht">
   </div>
 
   <div class="form-group">
     <label for="tva">TVA</label>
-    <input type="number" class="form-control" id="tva" placeholder="tva">
+    <input formControlName="tva" type="number" class="form-control" id="tva" placeholder="tva">
   </div>
 
   <div class="form-group">
     <label for="state">State</label>
-    <select class="form-control" id="state" placeholder="state">
+    <select formControlName="state" class="form-control" id="state" placeholder="state">
       <option *ngFor="let state of states" [ngValue]="state">{{ state }}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="comment">Comment</label>
-    <textarea class="form-control" id="comment" placeholder="comment"></textarea>
+    <textarea formControlName="cliecommentnt" class="form-control" id="comment" placeholder="comment"></textarea>
   </div>
 
 
