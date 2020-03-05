@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+p{
+  background: peachpuff;
+}
+
+
+.orange{
+  background: orange;
+}
+
+/* selector combinatoire*/
+p.orange {
+  background: skyblue;
+}
+
+/*selecteur d'attribut*/
+[class="orange"] {
+  background: teal;
+}
+
+/* pseudo selecteur */
+/* cibler le p premier enfant d'un div*/
+div p:first-child {
+  background: yellowgreen;
+}
+
+/* pseudo selecteur */
+/* cibler le p troisieme enfant d'un div*/
+div p:nth-child(3) {
+  background: rebeccapurple;
+}
+
+
+#pink {
+  background: pink;
+}
