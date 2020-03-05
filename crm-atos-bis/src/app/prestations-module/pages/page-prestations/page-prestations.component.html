@@ -17,6 +17,7 @@
         <td scope="row">{{item.tjmHt | currency:'EUR'}}</td>
         <td scope="row">{{item | total:'HT' | currency:'EUR'}}</td>
         <td scope="row">{{item | total |currency:'EUR'}}</td>
+        <!-- if we didn't use '[]' the value will be interpreted as string-->
         <td [appState]="item.state">
           <!-- crocher '[value]' pour binding avec value with pipe-->
           <!-- <select *ngFor="let state of states | keyvalue" [value]="state.key">{{state.value}}"</select> -->
