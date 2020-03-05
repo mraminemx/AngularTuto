@@ -35,3 +35,12 @@ div p:nth-child(3) {
 #pink {
   background: pink;
 }
+
+/* ordre des selecteur 'selecteur | !important | style | id | pseudo,class,attr | simple" */
+/* p{}                       0           0         0      0          0              1     */
+/* .orange{}                 0           0         0      0          1              0     */
+/* a:hover{}                 0           0         0      0          1              1     */
+/* #green{}                  0           0         0      1          0              0     */
+/* style=                    0           0         1      0          0              0     */
+/* !important                0           1         0      0          0              0     */
+/* div p #green              0           0         0      1          0              2     */
