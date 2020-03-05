@@ -1,12 +1,12 @@
 @import 'theme';
 
-.table-dark .state-option {
+#table-dark .state-option {
  background  : $color3;
 }
-.table-dark .state-annule {
+#table-dark .state-annule {
   background  : $color-error;
  }
 
-.table-dark .state-confirme {
+#table-dark .state-confirme {
   background  : $color-success;
  }
