@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
 
 //Alt + Maj + O ordonnancer
@@ -7,6 +8,9 @@ import { PagePrestationsComponent } from './pages/page-prestations/page-prestati
 const routes: Routes = [
 { path: '', component: PagePrestationsComponent,
   data:{ title : 'Prestations', subtitles:'Toutes les prestations'}
+},
+{ path: 'add', component: PageAddPrestationComponent,
+  data:{ title : 'Prestations', subtitles:'Ajouter une prestation'}
 }
 ];
 
