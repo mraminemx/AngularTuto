@@ -3,6 +3,7 @@ import { PrestationsService } from '../../services/prestations.service';
 import { Observable } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { States } from 'src/app/shared-module/enums/states.enum';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-prestations',
@@ -23,11 +24,18 @@ export class PagePrestationsComponent implements OnInit {
   public states = Object.values(States);
   //to use pipe keyvalue
   //public states = States;
-  constructor(private ps: PrestationsService) { }
+  constructor(private ps: PrestationsService,
+    private acroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     //to be able to subscribe and unsubscribe automaticaly using Async
     this.collection$= this.ps.collection;
+    this.acroute.data.subscribe(
+      (datas)=>{console.log(datas);
+      this.title=datas.title;
+      this.subtitle=datas.subtitles;
+      }
+    );
     //Subscribe to an observable
     console.log(this.ps.collection);
     this.title="Prestations";

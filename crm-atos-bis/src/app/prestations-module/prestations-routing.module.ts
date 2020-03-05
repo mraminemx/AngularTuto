@@ -5,7 +5,9 @@ import { PagePrestationsComponent } from './pages/page-prestations/page-prestati
 //Alt + Maj + O ordonnancer
 //router is a singleton can be initialized only on time
 const routes: Routes = [
-{ path: '', component: PagePrestationsComponent}
+{ path: '', component: PagePrestationsComponent,
+  data:{ title : 'Prestations', subtitles:'Toutes les prestations'}
+}
 ];
 
 @NgModule({
