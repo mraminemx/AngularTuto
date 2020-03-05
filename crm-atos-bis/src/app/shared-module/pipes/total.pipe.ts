@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TotalPipe implements PipeTransform {
 
-  transform(value: any, ...args: unknown[]): any {
+  transform(value: any, args?: any): any {
     if(value){
       //To avoid bug when there is no value
       console.log(value);
