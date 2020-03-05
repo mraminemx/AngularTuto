@@ -24,10 +24,10 @@ totalHt():number {
 
 
 totalTtc():number {
-  if(this.tva<=0){
+  console.log(`test ${this.tva==0}`);
+  if(this.tva==0){
     return this.totalHt();
   }
-  console.log(this.totalHt()*(1+this.tva/100));
   return this.totalHt()*(1+this.tva/100);
 }
 }
