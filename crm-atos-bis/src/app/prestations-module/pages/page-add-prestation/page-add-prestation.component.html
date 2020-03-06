@@ -1,3 +1,4 @@
-<!-- event binding with '()' property binding with []-->
-<app-form-prestation (nItem)="addItem($event)"></app-form-prestation>
-
+<app-template-a [title]="title" [subtitle]="subtitle">
+  <!-- event binding with '()' property binding with []-->
+  <app-form-prestation (nItem)="addItem($event)"></app-form-prestation>
+</app-template-a>

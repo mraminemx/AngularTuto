@@ -9,12 +9,21 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./page-add-prestation.component.scss']
 })
 export class PageAddPrestationComponent implements OnInit {
+  public title:string;
+  public subtitle:string;
 
   constructor(private ps: PrestationsService,
     private router:Router,
     private ar:ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.ar.data.subscribe(
+      (datas)=>{console.log(datas);
+      this.title=datas.title;
+      this.subtitle=datas.subtitles;
+      }
+    );
   }
 
   public addItem(item : any){

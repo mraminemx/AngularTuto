@@ -11,7 +11,7 @@ const routes: Routes = [
 },
 { path: 'add',
   component: PageAddPrestationComponent,
-  data:{ title : 'Prestations', subtitles:'Ajouter une prestation'}
+  data:{ title : 'Prestation', subtitles:'Ajouter une prestation'}
 }
 ];
 
