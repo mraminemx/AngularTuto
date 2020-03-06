@@ -1,0 +1,14 @@
+NgRx Reux(Store):
+utilité d'un store : est constitué d'un store et un objet immutable non modifiable avec des reducer.
+Reducer : c'est lui qui modifie le state en dispatchant une action pour modifier une proprieté et envoyé un nouveau state.
+
+Store c'est la combinaison de (state, reducer, action):
+simplifie l'application pour utilisé le cache du navigateur qui est nommé un state. 
+
+https://coursetro.com/posts/code/151/Angular-Ngrx-Store-Tutorial---Learn-Angular-State-Management
+
+https://levelup.gitconnected.com/angular-ngrx-a-clean-and-clear-introduction-4ed61c89c1fc
+
+https://medium.com/@richbray/a-beginners-guide-to-ngrx-store-bc2184d6d7f0
+
+https://medium.com/code-divoire/cr%C3%A9ation-dune-application-angular-avec-ngrx-pattern-redux-845f9ac7606e
