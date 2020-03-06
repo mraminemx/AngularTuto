@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { States } from 'src/app/shared-module/enums/states.enum';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class PagePrestationsComponent implements OnInit {
   public faTrashAlt=faTrashAlt;
   // public collection: Prestation[];
-  public collection$: Observable<Prestation[]>;
+  public collection$= new BehaviorSubject<Prestation[]>(null);
   public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State','Action'];
   public title:string;
   public subtitle:string;
@@ -31,7 +31,12 @@ export class PagePrestationsComponent implements OnInit {
 
   ngOnInit(): void {
     //to be able to subscribe and unsubscribe automaticaly using Async
-    this.collection$= this.ps.collection;
+    // this.collection$= this.ps.collection;
+    this.ps.collection.subscribe(
+      (datas) => {
+        this.collection$.next(datas);
+      }
+    );
     this.acroute.data.subscribe(
       (datas)=>{console.log(datas);
       this.title=datas.title;
@@ -62,7 +67,15 @@ export class PagePrestationsComponent implements OnInit {
 
   public delete(item:Prestation){
     this.ps.deleteItem(item).subscribe(
-(res:Prestation) =>{}
+    (res:Prestation) =>{
+      //Update List Hot Observable
+      console.log(`Return : ${res}`);
+      this.ps.collection.subscribe(
+        (datas) => {
+          this.collection$.next(datas);
+        }
+      );
+    }
     );
   }
 }
