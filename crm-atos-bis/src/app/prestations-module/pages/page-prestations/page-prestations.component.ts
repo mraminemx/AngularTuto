@@ -3,7 +3,7 @@ import { PrestationsService } from '../../services/prestations.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { States } from 'src/app/shared-module/enums/states.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -27,7 +27,8 @@ export class PagePrestationsComponent implements OnInit {
   //to use pipe keyvalue
   //public states = States;
   constructor(private ps: PrestationsService,
-    private acroute:ActivatedRoute) { }
+    private acroute:ActivatedRoute,
+    private router:Router) { }
 
   ngOnInit(): void {
     //to be able to subscribe and unsubscribe automaticaly using Async
@@ -77,5 +78,10 @@ export class PagePrestationsComponent implements OnInit {
       );
     }
     );
+  }
+
+  public edit(item:Prestation){
+   //Similare to the line under this.router.navigate([`prestation/edit`,item.id]);
+    this.router.navigate([`prestation`,`edit`,item.id]);
   }
 }
