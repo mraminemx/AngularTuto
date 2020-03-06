@@ -22,6 +22,7 @@ export class PagePrestationsComponent implements OnInit {
   public googlelink:string;
   public route:string;
   public externallink:string;
+  public listLinks : {route:string,label:string}[];
   //to get keyvalue
   public states = Object.values(States);
   //to use pipe keyvalue
@@ -31,6 +32,19 @@ export class PagePrestationsComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+    //Tableau
+    const a = [];
+    //Objet
+    const b = {};
+    //ajouter valeur au tableau
+    a.push(b);
+    //Ajouter attribut attr a l'objet
+    b['attr'] = 'valeur';
+
+    this.listLinks = [
+      {route:'details',label:'details'},
+      {route:'comment',label:'commentaire'}
+    ];
     //to be able to subscribe and unsubscribe automaticaly using Async
     // this.collection$= this.ps.collection;
     this.ps.collection.subscribe(
