@@ -14,7 +14,7 @@ export class PageEditPrestationComponent implements OnInit {
 
   public title:string;
   public subtitle:string;
-  public item:any;
+  // public itemId:string;
   public item$:Observable<Prestation>;
   constructor(private ps: PrestationsService,
     private router:Router,
@@ -39,6 +39,7 @@ export class PageEditPrestationComponent implements OnInit {
     this.item$ = this.ar.paramMap.pipe(
       //Operateur js qui fait la subscribtion et unsubscribe quand il recupere la data
       switchMap((params: ParamMap) => {
+        // this.itemId = params.get(`id`);
        return this.ps.getItemById(params.get(`id`));
       })
     );
@@ -49,13 +50,12 @@ export class PageEditPrestationComponent implements OnInit {
   public updateItem(item : any) {
     //logging object json from Form add [nItem]="addItem($event)
     console.log(item);
-    // this.ps.getItemById(item.id);
-    // this.ps.addItem(item).subscribe((res)=>{
-    //   //redirection avec navigate
-    //   // this.router.navigate(['prestations']);
-    //   this.router.navigate(['../'], {relativeTo:this.ar});
-    //   //
-    // });
+    // item.id=this.itemId;
+    this.ps.updateItem(item).subscribe((res)=>{
+      //redirection avec navigate
+      // this.router.navigate(['prestations']);
+      this.router.navigate(['../../'], {relativeTo:this.ar});
+    });
   }
 
 }
