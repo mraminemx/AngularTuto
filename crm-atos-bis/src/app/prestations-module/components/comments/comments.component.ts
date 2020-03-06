@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationsService } from '../../services/prestations.service';
+import { Prestation } from 'src/app/shared-module/models/prestation';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-comments',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  public item$:Subject<Prestation>;
+  constructor(private ps:PrestationsService) { }
 
   ngOnInit(): void {
+    this.item$ = this.ps.itemDetails$;
   }
 
 }

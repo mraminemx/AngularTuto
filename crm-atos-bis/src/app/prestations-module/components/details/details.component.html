@@ -1,1 +1,4 @@
-<p>details works!</p>
+<ng-container *ngIf="item$ |async as item">
+<p>{{ item.client }}</p>
+<p>{{ item.state }}</p>
+</ng-container>

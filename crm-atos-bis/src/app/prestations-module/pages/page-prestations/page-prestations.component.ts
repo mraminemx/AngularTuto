@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { States } from 'src/app/shared-module/enums/states.enum';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt,faAddressBook,faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-prestations',
@@ -13,6 +13,8 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class PagePrestationsComponent implements OnInit {
   public faTrashAlt=faTrashAlt;
+    public faAddressBook=faAddressBook;
+    public faAlignCenter=faAlignCenter;
   // public collection: Prestation[];
   public collection$= new BehaviorSubject<Prestation[]>(null);
   public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State','Action'];
@@ -97,5 +99,14 @@ export class PagePrestationsComponent implements OnInit {
   public edit(item:Prestation){
    //Similare to the line under this.router.navigate([`prestation/edit`,item.id]);
     this.router.navigate([`prestations`,`edit`,item.id]);
+  }
+
+  public details(item:Prestation){
+    this.ps.setDetails(item);
+  }
+
+  public comment(item:Prestation){
+   //Similare to the line under this.router.navigate([`prestation/edit`,item.id]);
+   this.ps.setComment(item);
   }
 }

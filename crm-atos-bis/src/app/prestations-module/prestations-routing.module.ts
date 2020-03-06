@@ -12,6 +12,7 @@ const routes: Routes = [
 { path: '', component: PagePrestationsComponent,
   data:{ title : 'Prestations', subtitles:'Toutes les prestations'},
   children : [
+    {path: '', redirectTo: 'details', pathMatch:'full' },
     {path: 'details', component: DetailsComponent },
     {path: 'comment', component: CommentsComponent }
   ]

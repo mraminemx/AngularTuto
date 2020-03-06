@@ -19,7 +19,11 @@
               <option *ngFor="let state of states" [value]="state" [selected]="state==item.state">{{ state }}</option>
             </select>
           </td>
-          <td><fa-icon [icon]="faTrashAlt" (click)="delete(item)"></fa-icon></td>
+          <td>
+            <fa-icon [icon]="faTrashAlt" (click)="$event.stopPropagation();delete(item)"></fa-icon>
+          </td>
+          <td><fa-icon [icon]="faAddressBook" (click)="$event.stopPropagation();details(item)"></fa-icon></td>
+          <td><fa-icon [icon]="faAlignCenter" (click)="$event.stopPropagation();comment(item)"></fa-icon></td>
         </tr>
       </app-tableau-light>
       <app-button [label]="label" [route]="route"></app-button>
