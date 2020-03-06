@@ -11,6 +11,7 @@ export class PageEditPrestationComponent implements OnInit {
 
   public title:string;
   public subtitle:string;
+  public item:any;
   constructor(private ps: PrestationsService,
     private router:Router,
     private ar:ActivatedRoute) { }
@@ -23,17 +24,26 @@ export class PageEditPrestationComponent implements OnInit {
       this.subtitle=datas.subtitles;
       }
     );
+    this.ar.paramMap.subscribe(
+    (datas) => {
+      console.log(datas.get(`id`));
+      this.ps.getItemById(datas.get(`id`)).subscribe((item:any)=>{
+      this.item= item;
+      console.log(item);
+      });
+    });
   }
 
-  public updateItem(item : any){
+  public updateItem(item : any) {
     //logging object json from Form add [nItem]="addItem($event)
     console.log(item);
-    this.ps.addItem(item).subscribe((res)=>{
-      //redirection avec navigate
-      // this.router.navigate(['prestations']);
-      this.router.navigate(['../'], {relativeTo:this.ar});
-      //
-    });
+    // this.ps.getItemById(item.id);
+    // this.ps.addItem(item).subscribe((res)=>{
+    //   //redirection avec navigate
+    //   // this.router.navigate(['prestations']);
+    //   this.router.navigate(['../'], {relativeTo:this.ar});
+    //   //
+    // });
   }
 
 }

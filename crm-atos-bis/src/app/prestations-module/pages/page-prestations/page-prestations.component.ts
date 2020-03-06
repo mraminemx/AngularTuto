@@ -82,6 +82,6 @@ export class PagePrestationsComponent implements OnInit {
 
   public edit(item:Prestation){
    //Similare to the line under this.router.navigate([`prestation/edit`,item.id]);
-    this.router.navigate([`prestation`,`edit`,item.id]);
+    this.router.navigate([`prestations`,`edit`,item.id]);
   }
 }

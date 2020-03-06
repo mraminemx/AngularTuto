@@ -62,6 +62,7 @@ export class PrestationsService {
     //return an Observable
     return this.http.patch(`${environment.urlApi}prestations/${item.id}`,item);
   }
-  public getItem(){
+  public getItemById(id:string){
+    return this.http.get(`${environment.urlApi}prestations/${id}`);
   }
 }
