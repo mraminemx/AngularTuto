@@ -19,6 +19,7 @@
               <option *ngFor="let state of states" [value]="state" [selected]="state==item.state">{{ state }}</option>
             </select>
           </td>
+          <td><fa-icon [icon]="faTrashAlt" (click)="delete(item)"></fa-icon></td>
         </tr>
       </app-tableau-light>
       <app-button [label]="label" [route]="route"></app-button>

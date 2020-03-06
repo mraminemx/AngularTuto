@@ -13,7 +13,8 @@ import { FormPrestationComponent } from './components/form-prestation/form-prest
   imports: [
     CommonModule,
     PrestationsRoutingModule,
-    SharedModuleModule
+    SharedModuleModule,
+
   ]
 })
 export class PrestationsModuleModule { }

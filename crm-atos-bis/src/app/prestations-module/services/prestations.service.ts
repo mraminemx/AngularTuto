@@ -44,8 +44,8 @@ export class PrestationsService {
     return this.http.post(`${environment.urlApi}prestations`,item);
   }
   // delete item in collection
-  public deleteItem(item:Prestation){
-    return this.http.delete(`${environment.urlApi}prestations/${item.id}`);
+  public deleteItem(item:Prestation) : Observable<Prestation>{
+    return this.http.delete<Prestation>(`${environment.urlApi}prestations/${item.id}`);
   }
   // update item in collection
   public updateState(item:Prestation, state:States) {

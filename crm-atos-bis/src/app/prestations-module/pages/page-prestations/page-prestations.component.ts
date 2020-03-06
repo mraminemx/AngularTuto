@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Prestation } from 'src/app/shared-module/models/prestation';
 import { States } from 'src/app/shared-module/enums/states.enum';
 import { ActivatedRoute } from '@angular/router';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-prestations',
@@ -11,10 +12,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./page-prestations.component.scss']
 })
 export class PagePrestationsComponent implements OnInit {
-
+  public faTrashAlt=faTrashAlt;
   // public collection: Prestation[];
   public collection$: Observable<Prestation[]>;
-  public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State'];
+  public headers =['Type','Client','Nb Jours','Tarif journalier','Total HT','Total TTC','State','Action'];
   public title:string;
   public subtitle:string;
   public label:string;
@@ -57,5 +58,11 @@ export class PagePrestationsComponent implements OnInit {
     this.ps.updateState(item,event.target.value).subscribe((res:Prestation)=>{
       item.state= res.state;
     });
+  }
+
+  public delete(item:Prestation){
+    this.ps.deleteItem(item).subscribe(
+(res:Prestation) =>{}
+    );
   }
 }
