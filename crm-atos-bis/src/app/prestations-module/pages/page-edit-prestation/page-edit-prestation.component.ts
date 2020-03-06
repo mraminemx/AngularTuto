@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-page-edit-prestation',
@@ -11,7 +12,7 @@ export class PageEditPrestationComponent implements OnInit {
 
   public title:string;
   public subtitle:string;
-  public item:any;
+  public item$:Observable<any>;
   constructor(private ps: PrestationsService,
     private router:Router,
     private ar:ActivatedRoute) { }
@@ -28,10 +29,7 @@ export class PageEditPrestationComponent implements OnInit {
     (datas) => {
       console.log(datas.get(`id`));
       //asynchrone call the view is generated before getting the item
-      this.ps.getItemById(datas.get(`id`)).subscribe((item:any)=>{
-      this.item= item;
-      console.log(item);
-      });
+      this.item$ = this.ps.getItemById(datas.get(`id`));
     });
   }
 

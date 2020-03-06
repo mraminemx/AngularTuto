@@ -1,4 +1,4 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
   <!-- event binding with '()' property binding with []-->
-  <app-form-prestation *ngIf="item" (nItem)="updateItem($event)" [item]="item"></app-form-prestation>
+  <app-form-prestation *ngIf="item$ | async as item" (nItem)="updateItem($event)" [item]="item"></app-form-prestation>
 </app-template-a>
