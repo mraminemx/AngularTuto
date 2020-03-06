@@ -19,7 +19,7 @@ export class FormPrestationComponent implements OnInit {
 
   ngOnInit(): void {
     this.form =this.fo.group({
-      typepresta:[this.item.typePresta],
+      typePresta:[this.item.typePresta],
       client:[this.item.client],
       tjmht:[this.item.tjmHt],
       nbjr:[this.item.nbJours],

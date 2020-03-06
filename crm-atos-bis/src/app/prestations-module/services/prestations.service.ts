@@ -40,12 +40,12 @@ export class PrestationsService {
     this.pCollection$ = col;
   }
   // add item in collection
-  public addItem(item:Prestation){
-    this.pCollection$;
+  public addItem(item: any){
+    return this.http.post(`${environment.urlApi}prestations`,item);
   }
   // delete item in collection
   public deleteItem(item:Prestation){
-    this.pCollection$;
+    return this.http.delete(`${environment.urlApi}prestations/${item.id}`);
   }
   // update item in collection
   public updateState(item:Prestation, state:States) {
