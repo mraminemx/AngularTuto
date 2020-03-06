@@ -32,7 +32,8 @@ export class FormPrestationComponent implements OnInit {
   public onSubmit() {
     //@Output send data to arent component
     console.log(this.form.value);
-    this.nItem.emit();
+    //send notification to parent component -> page-add-prestation
+    this.nItem.emit(this.form.value);
   }
 
 }
