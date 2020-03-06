@@ -38,7 +38,7 @@
     <textarea formControlName="comment" class="form-control" id="comment" placeholder="comment"></textarea>
   </div>
 
-
-  <button type="submit" class="btn btn-primary">Submit</button>
+<!-- disable button if form is invalid-->
+  <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
