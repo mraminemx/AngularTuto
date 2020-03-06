@@ -27,6 +27,7 @@ export class PageEditPrestationComponent implements OnInit {
     this.ar.paramMap.subscribe(
     (datas) => {
       console.log(datas.get(`id`));
+      //asynchrone call the view is generated before getting the item
       this.ps.getItemById(datas.get(`id`)).subscribe((item:any)=>{
       this.item= item;
       console.log(item);
