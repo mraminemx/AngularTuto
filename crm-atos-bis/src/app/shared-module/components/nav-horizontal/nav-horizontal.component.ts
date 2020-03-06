@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { setFlagsFromString } from 'v8';
 
 @Component({
   selector: 'app-nav-horizontal',

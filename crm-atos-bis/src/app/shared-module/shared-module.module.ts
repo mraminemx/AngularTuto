@@ -10,10 +10,13 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavHorizontalComponent } from './components/nav-horizontal/nav-horizontal.component';
+import { CommentsComponent } from '../prestations-module/components/comments/comments.component';
+import { DetailsComponent } from '../prestations-module/components/details/details.component';
+
 
 
 @NgModule({
-  declarations: [TotalPipe, StateDirective, TableauLightComponent, TableauDarkComponent, ButtonComponent, NavHorizontalComponent],
+  declarations: [TotalPipe, StateDirective, TableauLightComponent, TableauDarkComponent, ButtonComponent, NavHorizontalComponent, DetailsComponent, CommentsComponent],
   exports: [TotalPipe, StateDirective, TableauLightComponent, TableauDarkComponent,TemplatesModule,ButtonComponent,ReactiveFormsModule,FontAwesomeModule,NavHorizontalComponent],
   imports: [
     CommonModule,
