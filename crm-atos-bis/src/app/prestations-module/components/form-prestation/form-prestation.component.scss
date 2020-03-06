@@ -11,8 +11,8 @@ form .ng-valid.ng-touched {
   background: $color3;
 }
 :host-context(app-template-a) .btn-primary {
-  background: $color2;
+  background: $color1;
 }
 :host-context(app-template-b) .btn-primary {
-  background: $color1;
+  background: $color2;
 }
